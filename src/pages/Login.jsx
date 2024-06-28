@@ -74,8 +74,9 @@ const Login = () => {
     formData.append("bio", bio.value);
     formData.append("username", userName.value);
     formData.append("password", password.value);
+    const toastId =  toast.loading("Signing Up")
     try {
-      const toastId =  toast.loading("Signing Up")
+      
       const { data } = await axios.post(
         `${server}/api/v1/user/newUser`,
         formData,
